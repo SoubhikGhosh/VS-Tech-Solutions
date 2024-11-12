@@ -1,11 +1,16 @@
 .footer {
     display: flex;
-    justify-content: center;    
-    position: fixed;
-    bottom: 2px;
-    width: 100%;
     color: #d9d9d9;
-}
+    align-items: center;
+    position: fixed;       /* Keep footer fixed at the bottom */
+    bottom: 0;             /* Align to the bottom of the page */
+    left: 50%;             /* Center horizontally */
+    transform: translateX(-50%); /* Center align with respect to viewport */
+    padding: 1rem;         /* Optional padding for spacing */
+    background: rgba(0, 0, 0, 0.2); /* Optional semi-transparent background */
+    width: max-content;    /* Allow width to adjust to content */
+  }
+  
 
 .icon {
     height: 1.25rem;
