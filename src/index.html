@@ -1,13 +1,29 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>V.S. Tech Solutions</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>V.S. Tech Solutions</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/logos/lightIcon.png"
+      sizes="16x16, 32x32, 48x48, 64x64"
+      id="faviconTag"
+    />
+    <script>
+      const faviconTag = document.getElementById("faviconTag");
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)");
+      const changeFavicon = () => {
+        if (isDark.matches) faviconTag.href = "assets/logos/lightIcon.png";
+        else faviconTag.href = "assets/logos/darkIcon.png";
+      };
+      changeFavicon();
+      setInterval(changeFavicon,1000);
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
 </html>
