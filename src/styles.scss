@@ -1,3 +1,6 @@
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
 body,
 html {
     padding: 0;
@@ -30,4 +33,19 @@ html {
     100% {
         background-position: 0% 50%;
     }
+}
+
+.glass {
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgb(165 165 165 / 20%);
+    backdrop-filter: blur( 6.5px );
+    -webkit-backdrop-filter: blur( 6.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.flex-full-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
