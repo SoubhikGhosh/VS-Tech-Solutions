@@ -1,19 +1,19 @@
-<div class="glass type-box">
+<div class="glass type-box" #container>
     <div class="typewriter">
-        <span class="line">Hello World!</span>
-        <span class="line">Are you ready to bring your ideas to life</span>
-        <span class="line">with expert web development and engaging UI/UX design?</span>
+        <span class="line">Hello World! Are you ready to bring your</span>
+        <span class="line">ideas to life with expert web development and</span>
+        <span class="line">engaging UI/UX design?</span>
         <span class="line">We create user-friendly, responsive websites</span>
         <span class="line">that look great and work seamlessly.</span>
         <span class="line">Let’s build something amazing together!</span>
     </div>
     <div class="get-started">
-        <a [routerLink]="['/details']" class="button type--B">
+        <a class="button type--B" (click)="navigateWithFade(container)">
             <div class="button__line"></div>
             <div class="button__line"></div>
             <span class="button__text">Get Started</span>
             <div class="button__drow1"></div>
             <div class="button__drow2"></div>
-          </a>
+        </a>
     </div>
 </div>
