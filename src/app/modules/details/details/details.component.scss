@@ -9,11 +9,10 @@
     app-contact {
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeInSlideUp 0.8s ease forwards; /* Adds animation */
+      animation: fadeInSlideUp 0.8s ease forwards; 
     }
   }
   
-  /* Define the animation */
   @keyframes fadeInSlideUp {
     from {
       opacity: 0;
