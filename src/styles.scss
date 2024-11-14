@@ -40,12 +40,12 @@ html {
 }
 
 .glass {
-    background: rgba( 160, 160, 160, 0.15 );
+    background: rgba(160, 160, 160, 0.15);
     box-shadow: 0 8px 32px 0 rgb(165 165 165 / 20%);
-    backdrop-filter: blur( 6.5px );
-    -webkit-backdrop-filter: blur( 6.5px );
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .flex-full-center {
@@ -55,7 +55,13 @@ html {
 }
 
 /* Set higher z-index to ensure it remains on top */
-app-header, app-footer {
+app-header,
+app-footer {
     position: relative;
-    z-index: 100; /* Higher than blobs and background */
-  }
+    z-index: 100;
+    /* Higher than blobs and background */
+}
+
+.emoji {
+    font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
