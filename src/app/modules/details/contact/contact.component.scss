@@ -16,17 +16,16 @@
             background-repeat: no-repeat;
             transition: background-size 1s;
         }
+    }
 
-        .text:hover,
-        .text:focus {
-            background-size: 0 0.1em, 100% 0.1em;
-        }
+    &:hover .contact-title .text {
+        background-size: 0 0.1em, 100% 0.1em;
     }
 
     .contact-details {
         display: flex;
         flex-direction: column;
-        padding: 1rem 0 1rem 3.5rem;
+        padding: 1rem 0 2.25rem 3.5rem;
         font-size: 1.25rem;
 
         .detail-align {
