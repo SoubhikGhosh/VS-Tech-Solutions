@@ -8,6 +8,7 @@ import { BaseModule } from './modules/base/base.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { HomeModule } from './modules/home/home.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DetailsModule } from './modules/details/details.module';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BaseModule,
     SharedModule,
     HomeModule,
+    DetailsModule,
+    BaseModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en'
   }),

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingComponent } from './landing/landing.component';
 import { BaseModule } from "../base/base.module";
+import { RouterModule } from '@angular/router';
 
 
 
@@ -11,7 +12,7 @@ import { BaseModule } from "../base/base.module";
   ],
   imports: [
     CommonModule,
-    BaseModule
+    RouterModule.forRoot([])
 ],
   exports: [
     LandingComponent
