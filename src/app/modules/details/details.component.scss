@@ -1,0 +1,34 @@
+.details-wrapper {
+  display: flex;
+  position: absolute;
+  left: 1.25rem;
+  // top: calc(5rem + 8px);
+  top: 2rem;
+
+  .flex-col{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row {
+    width: calc(100% - 2.5rem);
+  }
+
+  .col-12 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInSlideUp 0.8s ease forwards;
+  }
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

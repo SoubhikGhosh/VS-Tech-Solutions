@@ -41,7 +41,7 @@ html {
 
 .glass {
     background: rgba(90, 90, 90, 0.15);
-    box-shadow: 0 8px 32px 0 rgb(165 165 165 / 20%);
+    box-shadow: 0 4px 28px 0 rgb(165 165 165 / 15%);
     backdrop-filter: blur(2.5rem);
     border-radius: 10px;
     border: 1px solid rgba(90, 90, 90, 0.2);
@@ -63,4 +63,44 @@ app-footer {
 
 .emoji {
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+.generic-wrapper {
+    margin: 0 1.5rem 2rem 0;
+    color: #dedede;
+
+    .generic-title {
+        padding: 1.5rem 0 1rem 2.5rem;
+        font-size: 2rem;
+
+        .text {
+            display: flex;
+            width: calc(100% - 4vw);
+            font-family: "Poppins";
+            padding-bottom: 0.8rem;
+            background:
+                linear-gradient(to right, #6FDFDF, #8E7CC3),
+                linear-gradient(to right, #8E7CC3, #b9c6ff, #6FDFDF, #FF77A9, #f5ff9e);
+            background-size: 100% 0.1em, 0 0.1em;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 1s;
+        }
+    }
+
+    &:hover .generic-title .text {
+        background-size: 0 0.1em, 100% 0.1em;
+    }
+
+    .generic-details {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0 2.25rem 3.5rem;
+        font-size: 1.25rem;
+
+        .detail-align {
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
 }
