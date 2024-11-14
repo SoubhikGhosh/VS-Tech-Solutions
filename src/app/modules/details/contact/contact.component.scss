@@ -1,0 +1,37 @@
+.contact-wrapper {
+    color: #dedede;
+
+    .contact-title {
+        padding: 1.5rem 0 1rem 2.5rem;
+        font-size: 2rem;
+
+        .text {
+            font-family: "Poppins";
+            padding-bottom: 0.8rem;
+            background:
+                linear-gradient(to right, #6FDFDF, #8E7CC3),
+                linear-gradient(to right, #8E7CC3, #b9c6ff, #6FDFDF, #FF77A9, #f5ff9e);
+            background-size: 100% 0.1em, 0 0.1em;
+            background-position: 100% 100%, 0 100%;
+            background-repeat: no-repeat;
+            transition: background-size 1s;
+        }
+
+        .text:hover,
+        .text:focus {
+            background-size: 0 0.1em, 100% 0.1em;
+        }
+    }
+
+    .contact-details {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0 1rem 3.5rem;
+        font-size: 1.25rem;
+
+        .detail-align {
+            display: flex;
+            justify-content: flex-start;
+        }
+    }
+}
