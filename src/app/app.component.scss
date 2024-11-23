@@ -8,57 +8,50 @@ $num-blobs: 15; // Total number of blobs
 // Wrapper
 .wrapper {
   position: relative;
-  z-index: -10; /* Below header and footer */
   padding: 0;
   margin: 0;
-  background: $primary-bg-color;
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible; // Ensure contents are not clipped
 }
 
 // Gradient Background
 .gradient-background {
-  position: absolute;
+  position: fixed; /* Ensures background covers entire viewport */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -100; 
-  overflow: hidden;
-  background: linear-gradient(198deg, #3b3f52, #1F2024);
+  z-index: -100; /* Ensures background is behind all other content */
+  background: linear-gradient(198deg, #242632, #151515);
   background-size: 150% 150%;
   animation: gradient-animation 2s ease-in-out infinite;
 }
 
-// Keyframes for gradient animation
-@keyframes gradient-animation {
-  0% { background-position: 0% 75%; }
-  50% { background-position: 100% 75%; }
-  100% { background-position: 0% 75%; }
-}
-
 // Blob Container
 .blob-c {
-  min-height: 100vh;
-  overflow: hidden;
-  position: absolute;
+  position: absolute; /* Use absolute to align blobs correctly */
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  overflow: visible;
+  z-index: -50; /* Ensure blobs are above the gradient but behind content */
   filter: blur(40px);
+  pointer-events: none; /* Ensure blobs do not interfere with interactions */
 }
 
-// Mixin for Blob Styles
+// Blobs
 @mixin blob($i) {
-  $size: math.random(math.div(100px, 1px)) * 1px + 50px; // Adjust size range between 50px to 150px
+  $size: math.random(math.div(100px, 1px)) * 1px + 50px; // Blob size between 50px and 150px
   $color: nth($blob-colors, math.random(length($blob-colors))); // Randomize color
-  $animation-duration: math.random(math.div(15s, 1s)) * 1s + 5s; // Adjust duration between 5s and 20s
-  
-  // Adjust for unit handling in math.random
-  $x-range: math.random(math.div(25vw, 1vw)) * 1vw + math.div(($i % 4) * 33vw, 1); 
-  $y-range: math.random(math.div(25vh, 1vh)) * 1vh + math.div(($i % 3) * 25vh, 1); 
+  $animation-duration: math.random(math.div(15s, 1s)) * 1s + 5s; // Animation duration
+
+  $x-range: math.random(100%) * 1%; // Horizontal positioning
+  $y-range: math.random(100%) * 1%; // Vertical positioning
 
   .shape-blob-#{$i} {
     width: $size;
@@ -74,12 +67,12 @@ $num-blobs: 15; // Total number of blobs
   }
 }
 
-// Generate Multiple Blobs
+// Generate Blobs
 @for $i from 1 through $num-blobs {
   @include blob($i);
 }
 
-// Keyframes for shape transformations
+// Keyframes for Blob Transformations
 @keyframes transform {
   0%, 100% { border-radius: 33% 67% 70% 30% / 30% 40% 70% 70%; }
   20% { border-radius: 37% 63% 51% 49% / 37% 35% 35% 63%; }
@@ -88,7 +81,7 @@ $num-blobs: 15; // Total number of blobs
   80% { border-radius: 40% 60% 42% 58% / 51% 51% 49% 59%; }
 }
 
-// Keyframes for increased blob movement
+// Keyframes for Movement
 @keyframes movement {
   0%, 100% { transform: translate(0, 0) scale(1); }
   25% { transform: translate(60px, -40px) rotate(30deg) scale(1.1); }
