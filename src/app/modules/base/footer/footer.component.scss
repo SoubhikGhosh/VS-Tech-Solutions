@@ -10,7 +10,7 @@
   padding: 1rem;
   background: rgba(0, 0, 0, 0.2);
   width: max-content;
-  transition: height 1s ease-in-out;
+  transition: background 0.4s ease-in, height 1s ease-in-out;
   border-radius: 10px 10px 0 0;
 
   .footer-content {
@@ -32,6 +32,10 @@
     text-align: center;
     max-width: 300px;
     transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out;
+  }
+
+  &:hover {
+    background: rgba(0, 0, 0, 1); /* Fully opaque on hover */
   }
 
   &:hover .extra-text {
