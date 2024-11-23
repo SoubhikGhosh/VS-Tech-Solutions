@@ -1,32 +1,40 @@
-.details-wrapper {
+.overall-wrapper {
   display: flex;
+  flex-direction: column; /* Arrange items vertically */
   position: absolute;
-  left: 1.25rem;
-  // top: calc(5rem + 8px);
-  top: 2rem;
+  margin-top: 2.5rem;
+  margin-left: 2rem;
 
-  .flex-col{
+  .details-wrapper {
     display: flex;
-    flex-direction: column;
-  }
+    flex-direction: row; /* Keep the "columns as rows" layout */
+    justify-content: space-between; /* Distribute space evenly */
+    gap: 1rem; /* Add spacing between columns */
+    margin-bottom: 2rem; /* Add space between details-wrapper and carousel */
 
-  .row {
-    width: calc(100% - 2.5rem);
-  }
+    .flex-col {
+      display: flex;
+      flex-direction: column;
+    }
 
-  .col-12 {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInSlideUp 0.8s ease forwards;
+    .row {
+      width: 100%; /* Ensure the columns fit the wrapper */
+    }
+
+    .col-12 {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInSlideUp 0.8s ease forwards;
+    }
   }
 }
 
+/* Keyframes for animations */
 @keyframes fadeInSlideUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);

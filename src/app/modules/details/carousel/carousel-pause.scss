@@ -1,0 +1,65 @@
+.ngb-carousel {
+    display: flex;
+    align-items: center;  /* Vertically centers the content */
+    justify-content: center; /* Horizontally centers the content */
+    height: 100%;
+    position: relative; /* Ensure the carousel is a positioned container */
+}
+
+/* Wrapper for each slide */
+.carousel-item {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    height: 100%;
+    position: relative; /* Create a stacking context for z-index */
+    z-index: 1; /* Ensure content stays above the image */
+    text-align: center;
+    flex-wrap: wrap; /* Allow wrapping of content if needed */
+}
+
+/* Styling for image */
+.picsum-img-wrapper {
+    width: 100%;
+    max-width: 500px; /* Limit the image width */
+    height: auto;
+    margin-bottom: 20px; /* Add space between image and heading */
+    display: flex;
+    justify-content: center;
+}
+
+.picsum-img-wrapper img {
+    width: 100%;  /* Make the image responsive */
+    height: auto;
+    object-fit: cover; /* Ensure the image fills the area */
+    max-height: 300px; /* Ensure the image height is constrained */
+    flex-shrink: 0;
+}
+
+/* Styling for caption (heading and content) */
+.carousel-caption {
+    padding: 10px;
+    color: white;  /* Make text color white */
+    max-width: 80%; /* Limit the caption width */
+    margin: 0 auto; /* Center the caption horizontally */
+    z-index: 2;  /* Ensure the caption is above the image */
+    position: static;
+    word-wrap: break-word;  /* Allow text to wrap when too long */
+}
+
+/* Optional: Styling for heading and paragraph */
+.carousel-caption h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-size: 16px;
+    white-space: normal; /* Ensure paragraphs wrap properly */
+}
+
+::ng-deep .carousel-indicators{
+    display: none;
+}
+
