@@ -21,7 +21,7 @@
 
 /* Styling for image */
 .picsum-img-wrapper {
-    width: 100%;
+    width: 75%;
     max-width: 500px; /* Limit the image width */
     height: auto;
     margin-bottom: 20px; /* Add space between image and heading */
@@ -39,7 +39,6 @@
 
 /* Styling for caption (heading and content) */
 .carousel-caption {
-    padding: 10px;
     color: white;  /* Make text color white */
     max-width: 80%; /* Limit the caption width */
     margin: 0 auto; /* Center the caption horizontally */
